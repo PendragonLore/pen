@@ -3,6 +3,7 @@
 
 #include <exception>
 
+namespace pen {
 class FailedToInizialize : public std::exception {
 public:
     FailedToInizialize(int error_code, const char *error_reason);
@@ -17,5 +18,6 @@ private:
     int code_;
     const char *reason_;
 };
+} // namespace pen
 
 #endif //PEN_FAILEDTOINITIALIZE_H
