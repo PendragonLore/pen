@@ -3,5 +3,8 @@ project(pen)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(pen src/main.cpp src/Pen.h src/Pen.cpp src/FailedToInitialize.cpp src/FailedToInitialize.h)
-target_link_libraries(pen -lsdl2 -lsdl2_image)
+find_package(SDL2 REQUIRED)
+include_directories(${SDL2_INCLUDE_DIRS})
+
+add_executable(pen src/main.cpp src/FailedToInitialize.cpp src/FailedToInitialize.hpp src/Types.hpp src/Pen.hpp src/Window.cpp src/Window.hpp)
+target_link_libraries(pen ${SDL2_LIBRARIES})
