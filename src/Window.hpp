@@ -1,7 +1,8 @@
 #pragma once
 
-#include <string>
 #include "Types.hpp"
+
+#include <string>
 
 namespace pen {
 class Window {

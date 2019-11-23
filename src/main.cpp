@@ -1,9 +1,5 @@
 #include "Pen.hpp"
 
-#include <SDL.h>
-
-#include <iostream>
-
 int main(int argc, const char *argv[]) {
     pen::Rectangle geometry;
     geometry.x = SDL_WINDOWPOS_UNDEFINED;

@@ -1,6 +1,6 @@
-#include "Window.hpp"
 #include "FailedToInitialize.hpp"
 #include "Types.hpp"
+#include "Window.hpp"
 
 namespace pen {
 Window::Window(const std::string &title, Rectangle geometry) {
