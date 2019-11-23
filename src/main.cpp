@@ -1,21 +1,15 @@
-#include "Pen.h"
-#include "FailedToInitialize.h"
+#include "Pen.hpp"
 
-#include <SDL2/SDL.h>
+#include <SDL.h>
 
-int main() {
-    SDL_Log("Pen is booting...");
+#include <iostream>
 
-    pen::Pen game("Test", std::pair<int, int>(800, 600));
+int main(int argc, const char *argv[]) {
+    pen::Rectangle geometry;
+    geometry.x = SDL_WINDOWPOS_UNDEFINED;
+    geometry.y = SDL_WINDOWPOS_UNDEFINED;
+    geometry.w = 800;
+    geometry.h = 800;
 
-    try {
-        game.init(SDL_INIT_VIDEO | SDL_INIT_AUDIO);
-    } catch (pen::FailedToInizialize &exc) {
-        SDL_Log("Failed to initialize SDL: %s", exc.what());
-        return exc.code();
-    }
-
-    game.quit();
-
-    return 0;
+    pen::Window window("Hi", geometry);
 }
